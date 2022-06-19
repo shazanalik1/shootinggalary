@@ -45,7 +45,7 @@ function love.draw()
         love.graphics.draw(sprites.target, target.x - target.radius, target.y - target.radius)
     end
     if gameState == 3 then
-        love.graphics.printf("Your score is: ", 0, 150, love.graphics.getWidth(), "center")
+        love.graphics.printf("Your score is: " .. score, 0, 150, love.graphics.getWidth(), "center")
         love.graphics.printf("Click anywhere to begin!", 0, 250, love.graphics.getWidth(), "center")
     end
     love.graphics.draw(sprites.crosshairs, love.mouse.getX()-20, love.mouse.getY()-20)
@@ -78,12 +78,12 @@ function love.mousepressed( x, y, button, istouch, presses )
           
     elseif button == 1 and gameState == 1 then
         gameState = 2
-        timer = 10
+        timer = 100
         score = 0
 
     elseif button == 1 and gameState == 3 then
         gameState = 2
-        timer = 10
+        timer = 100
         score = 0
     end
 end
